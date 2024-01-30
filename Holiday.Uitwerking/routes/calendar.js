@@ -53,11 +53,14 @@ function getHolidayNL(date){
 
 	switch(true)
 	{
-		case dd == 01 && mm == 00: return "Nieuwjaarsdag";
-		case dd == 27 && mm == 03: return "Koningsdag";
-		case dd == 05 && mm == 04 && (yyyy % 5) == 0: return "Bevrijdingsdag";
+		case dd == 1 && mm == 0: return "Nieuwjaarsdag";
+		case dd == 27 && mm == 3: return "Koningsdag";
+		case dd == 5 && mm == 4 && (yyyy % 5) == 0: return "Bevrijdingsdag";
 		case dd == 25 && mm == 11: return "Eerste Kerstdag";
 		case dd == 26 && mm == 11: return "Tweede Kerstdag";
+		case dd == 18 && mm == 4: return "Hemelvaartsdag";
+		case dd == 9 && mm == 5: return "Eerste pinksterdag";
+		case dd == 5 && mm == 5: return "Tweede pinksterdag";
 		case daysfterEasterSunday == 0: return "Eerste Paasdag";
 		case daysfterEasterSunday == 1: return "Tweede Paasdag";
 
