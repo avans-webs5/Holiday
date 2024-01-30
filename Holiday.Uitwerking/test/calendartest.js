@@ -192,12 +192,30 @@ describe('Testing calendar route', function(){
 
 				expect(res.body.isHolidayNL).to.be.a('Boolean');
 				expect(res.body.isHolidayNL).to.be.true;
-				expect(res.body.holidayNameNL).to.equal("Tweede Paasdag");
+				expect(res.body.holidayNameNL).to.equal("Hemelvaartsdag");
 				done();
 			});
 		});
-		it('should return Eerste pinksterdag on 09-06-2019');
-		it('should return Tweede pinksterdag on 05-06-2017');
+		it('should return Eerste pinksterdag on 09-06-2019',function(done){
+			makeRequest('/09/06/2019', 200, function(err, res){
+				if(err){ return done(err); }
+
+				expect(res.body.isHolidayNL).to.be.a('Boolean');
+				expect(res.body.isHolidayNL).to.be.true;
+				expect(res.body.holidayNameNL).to.equal("Eerste pinksterdag");
+				done();
+			});
+		});
+		it('should return Tweede pinksterdag on 05-06-2017',function(done){
+			makeRequest('/05/06/2017', 200, function(err, res){
+				if(err){ return done(err); }
+
+				expect(res.body.isHolidayNL).to.be.a('Boolean');
+				expect(res.body.isHolidayNL).to.be.true;
+				expect(res.body.holidayNameNL).to.equal("Tweede pinksterdag");
+				done();
+			});
+		});
 	})
 });
 
